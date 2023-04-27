@@ -1,8 +1,8 @@
 import "./styles.css";
-import "./flickity.css";
 import { Sidebar } from "./components/sidebar";
 import { Footer } from "./components/footer";
-import { Carousel } from "./components/carousel";
+import { LCarousel } from "./components/carousel";
+import {result} from "./lib/pocketbase";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         <div className="main sidebar-closed">
           <h2>Libros destacados</h2>
-          <Carousel />
+          <LCarousel />
         </div>
         <div className="category-section">
           <h2>Categorías</h2>

@@ -67,6 +67,7 @@ img {
   padding: 10px;
   transition: left 0.3s ease-in-out;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+  z-index: 1043;
 }
 
 .sidebar ul {
