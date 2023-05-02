@@ -12,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     color: white;
 }
-button[type="submit"], button[type="button"] {
+button[type="submit"], button[type="button"], button[type="close"] {
     background-color: #2196f3 ;
     color: white;
     padding: 10px;
@@ -21,6 +21,7 @@ button[type="submit"], button[type="button"] {
     cursor: pointer;
     margin: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+ 
 }
 img {
     max-width: 100%;
@@ -37,9 +38,9 @@ input[type="text"], input[type="password"], input[type="email"] {
 label {
     display: inline-block;
     width: 100px;
-    text-align: right;
+    text-align: left;
     margin: 10px;
-    color: red;
+    color: rgb(0, 0, 0);
 }
 a {
     color: #2196f3;
@@ -51,4 +52,14 @@ a {
 h2 {
     margin-top: 0px;
     color: black;
+}
+
+.lib-des{
+    color:white;
+    font-weight: bold;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+}
+
+.boton-form{
+    align-items: center;
 }

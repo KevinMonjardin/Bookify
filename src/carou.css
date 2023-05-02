@@ -117,28 +117,8 @@
     text-decoration: line-through;
   }
   
-  .pre-btn,
-  .nxt-btn {
-    border: none;
-    width: 10vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 8;
-  }
-  
-  .pre-btn {
-    left: 0;
-    transform: rotate(180deg);
-  }
-  
-  .nxt-btn {
-    right: 0;
-  }
+ 
+ 
   
   .pre-btn img,
   .nxt-btn img {
@@ -149,3 +129,36 @@
   .nxt-btn:hover img {
     opacity: 1;
   }
+
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .pre-btn,
+  .nxt-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+    height: auto;
+    cursor: pointer;
+    background-color: transparent; /* establece el fondo transparente */
+    border: none;
+  }
+  
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
+    right: 0;
+  }
+
+  

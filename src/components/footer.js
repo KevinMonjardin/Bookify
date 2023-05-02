@@ -1,6 +1,8 @@
+import React from 'react';
+
 export const Footer = () => {
   return (
-    <footer>
+    <footer >
       <div className="footer-content">
         <h3>Bookify</h3>
         <p>Todos los derechos reservados &copy; 2023</p>

@@ -1,7 +1,22 @@
 body {
-  background-color: #9da1a4;
+ 
   font-family: Arial, sans-serif;
   color: white;
+
+}
+body::before{
+  background: #659999;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .container {
@@ -16,7 +31,8 @@ body {
 
 h2 {
   margin-top: 0px;
-  color: black;
+  color: white;
+  
 }
 
 label {
@@ -38,7 +54,8 @@ input[type="email"] {
 }
 
 button[type="submit"],
-button[type="button"] {
+button[type="button"],
+button[type="close"] {
   background-color: #eea400;
   color: white;
   padding: 10px;
@@ -56,6 +73,7 @@ img {
 }
 
 .sidebar {
+  background-image: url("./img/fondosidebar.jpg");
   background-color: #eea400;
   color: #fff;
   position: fixed;
@@ -68,6 +86,11 @@ img {
   transition: left 0.3s ease-in-out;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
   z-index: 1043;
+}
+
+.page-body{
+  margin-left: 0;
+  transition: all 0.3s; /* Se quiere hacer que se mueva a la izq*/
 }
 
 .sidebar ul {
@@ -110,7 +133,12 @@ img {
   color: #0077b6;
   cursor: pointer;
   padding: 5px;
-  width: 25%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: auto; /* ajustar automáticamente el ancho del botón */
+  height: auto; /* ajustar automáticamente la altura del botón */
 }
 
 .sidebar button:hover {
@@ -126,8 +154,8 @@ img {
 }
 
 .main.sidebar-open {
-  margin-left: 180px;
-  transition: margin-left 0.5s ease;
+  margin-left: 250px; /* ajusta el margen izquierdo de la página */
+  transition: all 0.3s ease;
 
 }
 
@@ -137,10 +165,7 @@ img {
   margin-top: 20px;
 }
 
-.category-section h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+
 
 .category-section ul {
   list-style: none;
@@ -182,6 +207,7 @@ button#open-sidebar {
   cursor: pointer;
   font-size: 30px;
   color: #fff;
+  
 }
 
 button#open-sidebar i {
@@ -199,14 +225,32 @@ button#open-sidebar i {
   cursor: pointer;
   width: 30px;
   height: 30px;
+  position: absolute;
+  bottom: 0;
+}
+
+#sign-out{
+  position: absolute;
+  bottom: 5%;
 }
 
 .header {
+  background-image: url("./img/fondosidebar.jpg");
   display: flex;
-  background-color: #eea400;
+  background-size: cover;
+  background-position: center;
   margin: -10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  align-items: center;
+}
 
+
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 100px;
 }
 
 .header h1 {
@@ -214,21 +258,30 @@ button#open-sidebar i {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: cyan;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+  
 }
 
 footer {
+  background-image: url("./img/fondosidebar.jpg");
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  background-color: #eea400;
-  margin: -10px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   justify-content: center;
   text-align: center;
 }
 
+
 h3 {
   margin-bottom: 10px;
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
 }
 
 p {
@@ -239,4 +292,9 @@ p {
 
 .sidebar-open{
   left: 0px;
+}
+
+
+a {
+  text-decoration: none;
 }
