@@ -4,6 +4,7 @@ import imagen0 from "../img/arrow.png";
 import imagen1 from "../img/op.jpg";
 import imagen2 from "../img/db.jpg";
 import imagen3 from "../img/naruto.jpg";
+import {Info} from "./info";
 
 export const LCarousel = () => {
   const carouselRef = useRef(null);
@@ -34,7 +35,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 1</h2>
+              <Info />
               <p className="product-short-description">Description of book 1</p>
             </div>
           </div>
@@ -44,7 +45,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 2</h2>
+              <Info/>
               <p className="product-short-description">Description of book 2</p>
             </div>
           </div>
@@ -54,7 +55,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 2</h2>
+            <Info/>
               <p className="product-short-description">Description of book 2</p>
             </div>
           </div>
@@ -64,7 +65,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 2</h2>
+            <Info/>
               <p className="product-short-description">Description of book 2</p>
             </div>
           </div>
@@ -74,7 +75,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 2</h2>
+            <Info/>
               <p className="product-short-description">Description of book 2</p>
             </div>
           </div>
@@ -84,7 +85,7 @@ export const LCarousel = () => {
               <button className="card-btn">Bookmark</button>
             </div>
             <div className="product-info">
-              <h2 className="product-brand">Book 2</h2>
+            <Info/>
               <p className="product-short-description">Description of book 2</p>
             </div>
           </div>

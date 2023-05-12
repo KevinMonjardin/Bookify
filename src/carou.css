@@ -28,6 +28,7 @@
     width: 250px;
     height: 450px;
     margin-right: 40px;
+    text-align: center;
   }
   
   .product-image {
@@ -148,8 +149,10 @@
     width: 5%;
     height: auto;
     cursor: pointer;
-    background-color: transparent; /* establece el fondo transparente */
+    background-color: white; /* establece el fondo transparente */
     border: none;
+    border-radius: 20px;
+    z-index: 500;
   }
   
   .pre-btn {
@@ -161,4 +164,22 @@
     right: 0;
   }
 
+  .info-btn
+  {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 120px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-radius: 5px;
+    transition: 0.5s;
+  }
+  .info-btn:hover
+  {
+    text-decoration: underline;
+  }
   

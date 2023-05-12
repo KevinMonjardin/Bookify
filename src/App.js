@@ -12,9 +12,10 @@ import { Delete } from "./components/delete";
 function mostrarFormulario() {
   // Obtener el contenedor modal
   var modal = document.getElementById("formulario-modal");
-
+  var libro = document.getElementById("libro-modal");
   // Mostrar el contenedor modal
   modal.style.display = "block";
+  libro.style.display = "block";
 }
 function App() {
   return (
