@@ -50,12 +50,6 @@ export const Sidebar = () => {
             <a href="login.html">Cuentos de Hadas</a>
           </li>
           <li>
-            <a href="login.html">Cyberpunk</a>
-          </li>
-          <li>
-            <a href="login.html">Políaca</a>
-          </li>
-          <li>
             <a href="login.html">Triller</a>
           </li>
           <h1>Admin</h1>

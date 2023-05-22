@@ -11,33 +11,35 @@ const Login = () => {
 
   return (
     <>
-      <div className="container">
-        <img
-          src="https://i.imgur.com/7I9Was5.png"
-          alt="logo"
-          className="logo"
-        />
-        <form onSubmit={handleSubmit}>
-          <h2>Iniciar sesión</h2>
-          <label htmlFor="username">Usuario </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Usuario"
-            required
+      <div className="contcont">
+        <div className="container">
+          <img
+            src="https://i.imgur.com/7I9Was5.png"
+            alt="logo"
+            className="logo"
           />
-          <label htmlFor="password">Contraseña </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Contraseña"
-            required
-          />
-          <button type="submit">Iniciar sesión</button>
-          <Link to="/register">Registrarse</Link>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <h2>Iniciar sesión</h2>
+            <label htmlFor="username">Usuario </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Usuario"
+              required
+            />
+            <label htmlFor="password">Contraseña </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              required
+            />
+            <button type="submit">Iniciar sesión</button>
+            <Link to="/register">Registrarse</Link>
+          </form>
+        </div>
       </div>
     </>
   );

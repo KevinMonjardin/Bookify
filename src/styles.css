@@ -1,13 +1,17 @@
 body {
- 
+
   font-family: Arial, sans-serif;
   color: white;
 
 }
-body::before{
-  background: #659999;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #f4791f, #0077b6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #f4791f, #0077b6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+body::before {
+  background: #659999;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #f4791f, rgb(67, 37, 18));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #f4791f, rgb(67, 37, 18));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
   content: "";
@@ -32,7 +36,7 @@ background: linear-gradient(to bottom, #f4791f, #0077b6); /* W3C, IE 10+/ Edge, 
 h2 {
   margin-top: 0px;
   color: white;
-  
+
 }
 
 label {
@@ -88,9 +92,10 @@ img {
   z-index: 1043;
 }
 
-.page-body{
+.page-body {
   margin-left: 0;
-  transition: all 0.3s; /* Se quiere hacer que se mueva a la izq*/
+  transition: all 0.3s;
+  /* Se quiere hacer que se mueva a la izq*/
 }
 
 .sidebar ul {
@@ -137,8 +142,10 @@ img {
   padding: 0;
   margin: 0;
   border: none;
-  width: auto; /* ajustar automáticamente el ancho del botón */
-  height: auto; /* ajustar automáticamente la altura del botón */
+  width: auto;
+  /* ajustar automáticamente el ancho del botón */
+  height: auto;
+  /* ajustar automáticamente la altura del botón */
 }
 
 .sidebar button:hover {
@@ -154,7 +161,8 @@ img {
 }
 
 .main.sidebar-open {
-  margin-left: 250px; /* ajusta el margen izquierdo de la página */
+  margin-left: 250px;
+  /* ajusta el margen izquierdo de la página */
   transition: all 0.3s ease;
 
 }
@@ -207,7 +215,7 @@ button#open-sidebar {
   cursor: pointer;
   font-size: 30px;
   color: #fff;
-  
+
 }
 
 button#open-sidebar i {
@@ -229,7 +237,7 @@ button#open-sidebar i {
   bottom: 0;
 }
 
-#sign-out{
+#sign-out {
   position: absolute;
   bottom: 5%;
 }
@@ -261,7 +269,7 @@ button#open-sidebar i {
   color: cyan;
   font-weight: bold;
   text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
-  
+
 }
 
 footer {
@@ -270,7 +278,7 @@ footer {
   bottom: 0;
   width: 100%;
   display: flex;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   justify-content: center;
   text-align: center;
 }
@@ -290,7 +298,7 @@ p {
   color: white;
 }
 
-.sidebar-open{
+.sidebar-open {
   left: 0px;
 }
 
