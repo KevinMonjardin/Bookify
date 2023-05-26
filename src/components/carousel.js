@@ -3,10 +3,14 @@ import "../carou.css";
 import imagen0 from "../img/arrow.png";
 import { Modal } from "./modal";
 import "../styles/modal.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { set } from "react-hook-form";
 
-export const LCarousel = () => {
+export const LCarousel = ({title, bookmarkTitle}) => {
   const carouselRef = useRef(null);
   const [books, setBooks] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -43,8 +47,24 @@ export const LCarousel = () => {
     setShowModal(false);
   };
 
+  const addFavorite = (book) => {
+    if (!favorites.includes(book)) {
+      setFavorites([...favorites, book]);
+    } else {
+      setFavorites([...favorites.filter((item) => item !== book)]);
+    }
+
+    console.log(favorites);
+  };
+
+  const removeFavorite = (book) => {
+    setFavorites([...favorites.filter((item) => item !== book)]);
+  }
+  
+
   return (
     <>
+      <h2 className="lib-des">{title}</h2>
       <section className="product">
         <button className="pre-btn" onClick={handlePrev}>
           <img src={imagen0} alt="flecha" />
@@ -62,6 +82,11 @@ export const LCarousel = () => {
                   className="product-thumb"
                   alt="book cover"
                 />
+                <button className="favs-btn"
+                  onClick={() => addFavorite(book)}
+                >
+                  <FontAwesomeIcon  icon={faBookmark} transform="left-2" />
+                </button>
                 <button className="card-btn" onClick={openModal}>
                   Información
                 </button>
@@ -74,7 +99,7 @@ export const LCarousel = () => {
       {showModal && (
         <Modal onClose={closeModal}>
           <form>
-            <h2>Bookmark</h2>
+            <h2>Información</h2>
             <label className="infotitle" htmlFor="title">
               Título:{" "}
             </label>{" "}
@@ -143,6 +168,40 @@ export const LCarousel = () => {
           </form>
         </Modal>
       )}
+
+<h2 className="lib-des">Favoritos</h2>
+      {/* Bookmark button */}
+         <div className = "bookmark__section">
+          {favorites.length ? (
+             favorites.map((book) => (
+              
+              <div className="product-card" key={book.id}>
+                <div className="product-image">
+                  <img
+                    src={book.volumeInfo.imageLinks.thumbnail}
+                    className="product-thumb"
+                    alt="book cover"
+                 />
+                  <button className="favs-btn"
+                   onClick={() => removeFavorite(book)}
+                 >
+                    <FontAwesomeIcon  icon={faBookmark} transform="left-2" />
+                 </button>
+                 <button className="card-btn" onClick={openModal}>
+                    Información
+                  </button>
+                </div>
+              </div>
+            ))
+            
+  ) : (
+    <>
+      <p>Aun no añades libros a tu lista...</p>
     </>
+  )}
+  </div>
+    </>
+
+    
   );
 };
