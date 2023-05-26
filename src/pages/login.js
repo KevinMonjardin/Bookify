@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/login.css";
+import imagen from "../img/login.svg";
 import { Link } from "react-router-dom";
 import pb from "../lib/pocketbase";
 import { set, useForm } from "react-hook-form";
@@ -19,7 +20,6 @@ const Login = () => {
       alert("Alguno de los campos es incorrecto");
     }
     setIsLoading(false);
-    setIsLoading(false);
   }
 
   if (pb.authStore.isValid) {
@@ -30,11 +30,7 @@ const Login = () => {
     <>
       <div className="contcont">
         <div className="container">
-          <img
-            src="https://i.imgur.com/7I9Was5.png"
-            alt="logo"
-            className="logo"
-          />
+          <img src={imagen} alt="logo" className="logo" />
           <form onSubmit={handleSubmit(entrar)}>
             <h2>Iniciar sesión</h2>
             <label htmlFor="username">Email </label>

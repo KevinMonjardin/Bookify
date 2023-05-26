@@ -17,7 +17,7 @@ body {
 button[type="submit"],
 button[type="button"],
 button[type="close"] {
-    background-color: #2196f3;
+    background-color: #ab6dc3;
     color: white;
     padding: 10px;
     border: none;
@@ -29,9 +29,9 @@ button[type="close"] {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 10px;
 }
 
 input[type="text"],
@@ -77,10 +77,6 @@ h2 {
 
 .contcont {
     display: grid;
-    margin-top: 100px;
+    margin-top: 50px;
     align-items: center;
-}
-
-#carga {
-    color: black;
 }

@@ -40,13 +40,13 @@ const BookList = () => {
       const response = await axios.get(
         `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
           `${searchQuery} subject:física`
-        )}&startIndex=${page * 33}&maxResults=33`
+        )}&startIndex=${page * 10}&maxResults=10`
       );
 
       const allBooks = response.data.items;
 
-      setBooks(allBooks .slice(0, 100)); 
-      setTotalPages(Math.ceil(allBooks .length / 10));
+      setBooks(allBooks.slice(0, 100));
+      setTotalPages(Math.ceil(allBooks.length / 10));
     } catch (error) {
       console.log(error);
     }
@@ -86,17 +86,23 @@ const BookList = () => {
               <label className="infotitle" htmlFor="title">
                 Título:{" "}
               </label>
-              <label htmlFor="book-name">{selectedBook?.volumeInfo?.title}</label>
+              <label htmlFor="book-name">
+                {selectedBook?.volumeInfo?.title}
+              </label>
               <br />
               <label className="infotitle" htmlFor="Autor">
                 Autor:{" "}
               </label>
-              <label htmlFor="book-name">{selectedBook?.volumeInfo?.authors?.[0]}</label>
+              <label htmlFor="book-name">
+                {selectedBook?.volumeInfo?.authors?.[0]}
+              </label>
               <br />
               <label className="infotitle" htmlFor="Editorial">
                 Editorial:{" "}
               </label>
-              <label htmlFor="book-name">{selectedBook?.volumeInfo?.publisher}</label>
+              <label htmlFor="book-name">
+                {selectedBook?.volumeInfo?.publisher}
+              </label>
               <br />
               <label className="infotitle" htmlFor="Año">
                 Año:{" "}
@@ -115,20 +121,27 @@ const BookList = () => {
               <label className="infotitle" htmlFor="Páginas">
                 Páginas:{" "}
               </label>
-              <label htmlFor="book-name">{selectedBook?.volumeInfo?.pageCount}</label>
+              <label htmlFor="book-name">
+                {selectedBook?.volumeInfo?.pageCount}
+              </label>
               <br />
               <label className="infotitle" htmlFor="Idioma">
                 Idioma:{" "}
               </label>
-              <label htmlFor="book-name">{selectedBook?.volumeInfo?.language}</label>
+              <label htmlFor="book-name">
+                {selectedBook?.volumeInfo?.language}
+              </label>
               <br />
               <label className="infotitle" htmlFor="Sinopsis">
                 Descripción:{" "}
               </label>
               <label htmlFor="book-name">
                 {selectedBook?.volumeInfo?.description &&
-                  selectedBook?.volumeInfo?.description.length > 300
-                  ? `${selectedBook?.volumeInfo?.description.substring(0, 300)}...`
+                selectedBook?.volumeInfo?.description.length > 300
+                  ? `${selectedBook?.volumeInfo?.description.substring(
+                      0,
+                      300
+                    )}...`
                   : selectedBook?.volumeInfo?.description}
               </label>
               <br />

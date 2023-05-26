@@ -1,4 +1,5 @@
 import "../styles/login.css";
+import imagen from "../img/reg.svg";
 import React from "react";
 import { Link } from "react-router-dom";
 import pb from "../lib/pocketbase";
@@ -37,10 +38,7 @@ const Register = () => {
     <>
       <div className="contcont">
         <div className="container">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3200/3200751.png"
-            alt="Logo"
-          />
+          <img src={imagen} alt="Logo" />
           <form onSubmit={handleSubmit(reg)}>
             <h2>Registro</h2>
             <label htmlFor="email">Correo electrónico:</label>

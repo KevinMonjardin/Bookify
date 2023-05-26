@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imagen from "../img/barra-de-menus (1).png";
+import imagen from "../img/barra-de-menus (1).svg";
 import imagen2 from "../img/borrar.png";
 import React from "react";
 import "../styles/sidebar.css";
