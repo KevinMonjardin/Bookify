@@ -1,32 +1,42 @@
 import React from "react";
 import "../styles/login.css";
 import { Link } from "react-router-dom";
+import pb from "../lib/pocketbase";
+import { set, useForm } from "react-hook-form";
+import { useState } from "react";
 
 const Login = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes agregar el código para enviar los datos del formulario a tu backend o hacer cualquier otra acción necesaria
-    console.log("Datos de inicio de sesión enviados");
-  };
+  const { register, handleSubmit } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function entrar(data) {
+    setIsLoading(true);
+    const authData = await pb
+      .collection("users")
+      .authWithPassword(data.email, data.password);
+    setIsLoading(false);
+  }
 
   return (
     <>
       <div className="contcont">
         <div className="container">
+          <h2 id="carga">Logged In: {pb.authStore.isValid.toString()}</h2>
           <img
             src="https://i.imgur.com/7I9Was5.png"
             alt="logo"
             className="logo"
           />
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(entrar)}>
             <h2>Iniciar sesión</h2>
-            <label htmlFor="username">Usuario </label>
+            <label htmlFor="username">Email </label>
             <input
-              type="text"
+              type="email"
               id="username"
               name="username"
-              placeholder="Usuario"
+              placeholder="Correo electrónico"
               required
+              {...register("email")}
             />
             <label htmlFor="password">Contraseña </label>
             <input
@@ -35,6 +45,7 @@ const Login = () => {
               name="password"
               placeholder="Contraseña"
               required
+              {...register("password")}
             />
             <button type="submit">Iniciar sesión</button>
             <Link to="/register">Registrarse</Link>

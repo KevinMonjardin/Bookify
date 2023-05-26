@@ -6,9 +6,15 @@ import "../styles/sidebar.css";
 import { Add } from "./add";
 import { Delete } from "./delete";
 import { Link } from "react-router-dom";
+import pb from "../lib/pocketbase";
 
 export const Sidebar = () => {
   const [isOpensidebar, setIsOpensidebar] = useState(false);
+
+  function salir() {
+    pb.authStore.clear();
+  }
+
   return (
     <body className="page-body">
       <div className="header">
@@ -34,14 +40,15 @@ export const Sidebar = () => {
       <div className={`sidebar ${isOpensidebar ? "sidebar-open" : ""}`}>
         <ul>
           <h1>Bookify</h1>
+          <li>{/* <h1>Hola {pb.authStore.model.name}!</h1> */}</li>
           <li>
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
           </li>
         </ul>
         <h1>Categorías</h1>
         <ul>
           <li>
-            <a href="login.html">Aventura</a>
+            <Link to="/aventura">Matematicas</Link>
           </li>
           <li>
             <a href="login.html">Ciencia Ficción</a>
@@ -52,6 +59,7 @@ export const Sidebar = () => {
           <li>
             <a href="login.html">Triller</a>
           </li>
+
           <h1>Admin</h1>
           <ul>
             <li>
@@ -62,8 +70,11 @@ export const Sidebar = () => {
             </li>
           </ul>
         </ul>
+
         <br />
-        <Link to="/login">Cerrar sesion</Link>
+        <Link onClick={salir} to="/login">
+          Cerrar sesion
+        </Link>
         <img
           id="close-sidebar"
           src={imagen2}

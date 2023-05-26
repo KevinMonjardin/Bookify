@@ -3,7 +3,6 @@ import "../styles.css";
 import { Sidebar } from "../components/sidebar";
 import { Footer } from "../components/footer";
 import { LCarousel } from "../components/carousel";
-import { result } from "../lib/pocketbase";
 
 function mostrarFormulario() {
   // Obtener el contenedor modal
