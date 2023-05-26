@@ -1,8 +1,13 @@
+import { Modal } from "../components/modal";
+import "../styles/modal.css";
+
 const Erro404 = () => {
   return (
     <div>
-      <h1>Error 404</h1>
-      <p>Not found</p>
+      <Modal>
+        <h2>Error 404</h2>
+        <label>Not found</label>
+      </Modal>
     </div>
   );
 };

@@ -15,6 +15,10 @@ export const Sidebar = () => {
     pb.authStore.clear();
   }
 
+  if (pb.authStore.isValid === false) {
+    window.location.href = "/error404";
+  }
+
   return (
     <body className="page-body">
       <div className="header">
@@ -27,14 +31,6 @@ export const Sidebar = () => {
           }}
         />
         <h1>Bookify</h1>
-        <div className="search-container">
-          <form action="#" method="get">
-            <input type="text" name="search" placeholder="Buscar..." />
-            <button type="submit">
-              <i className="fa fa-search"></i>
-            </button>
-          </form>
-        </div>
       </div>
 
       <div className={`sidebar ${isOpensidebar ? "sidebar-open" : ""}`}>
@@ -47,7 +43,7 @@ export const Sidebar = () => {
         <h1>Categorías</h1>
         <ul>
           <li>
-          <a href="/matematicas">Matemáticas</a>
+            <a href="/matematicas">Matemáticas</a>
           </li>
           <li>
             <a href="/programacion">Programación</a>
@@ -58,19 +54,7 @@ export const Sidebar = () => {
           <li>
             <a href="/electronica">Electrónica</a>
           </li>
-          <div className="adshow">
-            <h1>Admin</h1>
-            <ul>
-              <li>
-                <Add />
-              </li>
-              <li>
-                <Delete />
-              </li>
-            </ul>
-          </div>
         </ul>
-
         <br />
         <Link onClick={salir} to="/">
           Cerrar sesion
