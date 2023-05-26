@@ -15,7 +15,7 @@ const UrlRoutes = () => {
         <Routes>
           <Route exact path="/" Component={Login} />
           <Route exact path="/register" Component={Register} />
-          <Route exact path="/" Component={Homepage} />
+          <Route exact path="/home" Component={Homepage} />
           <Route exact path="/matematicas" Component={Matematicas} />
           <Route exact path="/programacion" Component={Programacion} />
           <Route exact path="/fisica" Component={Fisica} />
