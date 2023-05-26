@@ -47,16 +47,16 @@ export const Sidebar = () => {
         <h1>Categorías</h1>
         <ul>
           <li>
-            <Link to="/aventura">Matematicas</Link>
+          <a href="/matematicas">Matemáticas</a>
           </li>
           <li>
-            <a href="login.html">Ciencia Ficción</a>
+            <a href="/programacion">Programación</a>
           </li>
           <li>
-            <a href="login.html">Cuentos de Hadas</a>
+            <a href="/fisica">Física</a>
           </li>
           <li>
-            <a href="login.html">Triller</a>
+            <a href="/electronica">Electrónica</a>
           </li>
           <div className="adshow">
             <h1>Admin</h1>

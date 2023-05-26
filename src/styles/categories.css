@@ -1,0 +1,24 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book-card {
+  flex: 0 0 200px; /* Anchura fija para cada tumbnail */
+  margin: 10px; /* Espacio entre los tumbnails */
+}
+.thumbnail {
+  width: 250px; /* Para ajustar el tamaño del tumbnail al contenedor */
+  height: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  transform: scale(1.2);
+}
+
+
+
