@@ -10,9 +10,9 @@ const UrlRoutes = () => {
     <div>
       <Router>
         <Routes>
-          <Route exact path="/login" Component={Login} />
+          <Route exact path="/" Component={Login} />
           <Route exact path="/register" Component={Register} />
-          <Route exact path="/" Component={Homepage} />
+          <Route exact path="/home" Component={Homepage} />
           <Route exact path="/aventura" Component={Aventura} />
           <Route path="*" Component={Erro404} />
         </Routes>

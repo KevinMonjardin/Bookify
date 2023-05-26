@@ -39,10 +39,9 @@ export const Sidebar = () => {
 
       <div className={`sidebar ${isOpensidebar ? "sidebar-open" : ""}`}>
         <ul>
-          <h1>Bookify</h1>
-          <li>{/* <h1>Hola {pb.authStore.model.name}!</h1> */}</li>
+          <h1>Hola {pb.authStore.model.name}!</h1>
           <li>
-            <a href="/">Inicio</a>
+            <a href="/home">Inicio</a>
           </li>
         </ul>
         <h1>Categorías</h1>
@@ -59,20 +58,21 @@ export const Sidebar = () => {
           <li>
             <a href="login.html">Triller</a>
           </li>
-
-          <h1>Admin</h1>
-          <ul>
-            <li>
-              <Add />
-            </li>
-            <li>
-              <Delete />
-            </li>
-          </ul>
+          <div className="adshow">
+            <h1>Admin</h1>
+            <ul>
+              <li>
+                <Add />
+              </li>
+              <li>
+                <Delete />
+              </li>
+            </ul>
+          </div>
         </ul>
 
         <br />
-        <Link onClick={salir} to="/login">
+        <Link onClick={salir} to="/">
           Cerrar sesion
         </Link>
         <img

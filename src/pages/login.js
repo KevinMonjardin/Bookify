@@ -11,17 +11,25 @@ const Login = () => {
 
   async function entrar(data) {
     setIsLoading(true);
-    const authData = await pb
-      .collection("users")
-      .authWithPassword(data.email, data.password);
+    try {
+      const authData = await pb
+        .collection("users")
+        .authWithPassword(data.email, data.password);
+    } catch (error) {
+      alert("Alguno de los campos es incorrecto");
+    }
     setIsLoading(false);
+    setIsLoading(false);
+  }
+
+  if (pb.authStore.isValid) {
+    window.location.href = "/home";
   }
 
   return (
     <>
       <div className="contcont">
         <div className="container">
-          <h2 id="carga">Logged In: {pb.authStore.isValid.toString()}</h2>
           <img
             src="https://i.imgur.com/7I9Was5.png"
             alt="logo"
@@ -47,6 +55,8 @@ const Login = () => {
               required
               {...register("password")}
             />
+            <br />
+            <br />
             <button type="submit">Iniciar sesión</button>
             <Link to="/register">Registrarse</Link>
           </form>
