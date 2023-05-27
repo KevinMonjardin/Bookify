@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { set } from "react-hook-form";
 
-export const LCarousel = ({title, bookmarkTitle}) => {
+export const LCarousel = ({ title, bookmarkTitle }) => {
   const carouselRef = useRef(null);
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -50,17 +50,30 @@ export const LCarousel = ({title, bookmarkTitle}) => {
   const addFavorite = (book) => {
     if (!favorites.includes(book)) {
       setFavorites([...favorites, book]);
+      localStorage.setItem("favorites", JSON.stringify([...favorites, book]));
     } else {
       setFavorites([...favorites.filter((item) => item !== book)]);
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify([...favorites.filter((item) => item !== book)])
+      );
     }
-
-    console.log(favorites);
   };
 
   const removeFavorite = (book) => {
     setFavorites([...favorites.filter((item) => item !== book)]);
-  }
-  
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify([...favorites.filter((item) => item !== book)])
+    );
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem("favorites");
+    if (data) {
+      setFavorites(JSON.parse(data));
+    }
+  }, []);
 
   return (
     <>
@@ -82,10 +95,8 @@ export const LCarousel = ({title, bookmarkTitle}) => {
                   className="product-thumb"
                   alt="book cover"
                 />
-                <button className="favs-btn"
-                  onClick={() => addFavorite(book)}
-                >
-                  <FontAwesomeIcon  icon={faBookmark} transform="left-2" />
+                <button className="favs-btn" onClick={() => addFavorite(book)}>
+                  <FontAwesomeIcon icon={faBookmark} transform="left-2" />
                 </button>
                 <button className="card-btn" onClick={openModal}>
                   Información
@@ -169,39 +180,36 @@ export const LCarousel = ({title, bookmarkTitle}) => {
         </Modal>
       )}
 
-<h2 className="lib-des">Favoritos</h2>
+      <h2 className="lib-des">Favoritos</h2>
       {/* Bookmark button */}
-         <div className = "bookmark__section">
-          {favorites.length ? (
-             favorites.map((book) => (
-              
-              <div className="product-card" key={book.id}>
-                <div className="product-image">
-                  <img
-                    src={book.volumeInfo.imageLinks.thumbnail}
-                    className="product-thumb"
-                    alt="book cover"
-                 />
-                  <button className="favs-btn"
-                   onClick={() => removeFavorite(book)}
-                 >
-                    <FontAwesomeIcon  icon={faBookmark} transform="left-2" />
-                 </button>
-                 <button className="card-btn" onClick={openModal}>
-                    Información
-                  </button>
-                </div>
+      <div className="bookmark__section">
+        {favorites.length ? (
+          favorites.map((book) => (
+            <div className="product-card" key={book.id}>
+              <div className="product-image">
+                <img
+                  src={book.volumeInfo.imageLinks.thumbnail}
+                  className="product-thumb"
+                  alt="book cover"
+                />
+                <button
+                  className="favs-btn"
+                  onClick={() => removeFavorite(book)}
+                >
+                  <FontAwesomeIcon icon={faBookmark} transform="left-2" />
+                </button>
+                <button className="card-btn" onClick={openModal}>
+                  Información
+                </button>
               </div>
-            ))
-            
-  ) : (
-    <>
-      <p>Aun no añades libros a tu lista...</p>
+            </div>
+          ))
+        ) : (
+          <>
+            <p>Aun no añades libros a tu lista...</p>
+          </>
+        )}
+      </div>
     </>
-  )}
-  </div>
-    </>
-
-    
   );
 };
