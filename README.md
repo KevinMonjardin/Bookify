@@ -14,6 +14,6 @@ Bookify es una aplicacion web desarrollada en React.JS como parte de la clase de
  - Muestra informacion relevante sobre los libros
  - Seccion de favoritos
 ## Creditos
--Fabian De la O Quiñonez
--Kevin Roman Monjardin Montaño
--Hector Alejandro Lucero Naranjo
+ -Fabian De la O Quiñonez
+ -Kevin Roman Monjardin Montaño
+ -Hector Alejandro Lucero Naranjo
