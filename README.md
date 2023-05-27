@@ -9,6 +9,7 @@ Bookify es una aplicacion web desarrollada en React.JS como parte de la clase de
  - React Router, React Router Hash Link
  - PocketBase
  - Google Books API
+ - Diseño web adaptable
 ## Caracteristicas
  - Inicio y registro de sesion
  - Buscador de libros
