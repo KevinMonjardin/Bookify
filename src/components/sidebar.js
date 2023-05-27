@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imagen from "../img/barra-de-menus (1).svg";
+import imagen from "../img/barra-de-menus (1).png";
 import imagen2 from "../img/borrar.png";
 import React from "react";
 import "../styles/sidebar.css";
@@ -7,6 +7,8 @@ import { Add } from "./add";
 import { Delete } from "./delete";
 import { Link } from "react-router-dom";
 import pb from "../lib/pocketbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Sidebar = () => {
   const [isOpensidebar, setIsOpensidebar] = useState(false);
